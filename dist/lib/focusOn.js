@@ -18,7 +18,7 @@
         '$timeout',
         function ($timeout) {
             return function ($scope, $element, $attrs) {
-                var corkUiFocusOn = $attrs.corkUiFocusOn;
+                var unwatcher;
                 if (!$attrs.tabindex) {
                     $element.attr('tabindex', 0);
                 }
@@ -28,11 +28,17 @@
                         $element[0].focus();
                     });
                 }
-                if (corkUiFocusOn === 'auto') {
-                    setFocus();
-                } else {
-                    $scope.$on(corkUiFocusOn, setFocus);
-                }
+
+                $attrs.$observe('corkUiFocusOn', function (val) {
+                    if (unwatcher) {
+                        unwatcher();
+                    }
+                    if (val === 'auto') {
+                        setFocus();
+                    } else {
+                        unwatcher = $scope.$on(val, setFocus);
+                    }
+                });
             };
         }
     ]);

@@ -1,3 +1,11 @@
+<a name="v0.0.6"></a>
+### v0.0.6 (2015-04-09)
+
+
+#### Features
+
+* **focus:** observe attribute and rebind message listener ([8be8e3ed](git@github.com:cork-labs/ng.cork.ui.focus-on/commit/8be8e3edf2500f2739e31c2422783b76f7d78c94))
+
 <a name="v0.0.5"></a>
 ### v0.0.5 (2015-04-09)
 

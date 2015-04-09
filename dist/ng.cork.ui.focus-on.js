@@ -1,5 +1,5 @@
 /**
- * ng.cork.ui.focus-on - v0.0.5 - 2015-04-09
+ * ng.cork.ui.focus-on - v0.0.6 - 2015-04-09
  * https://github.com/cork-labs/ng.cork.ui.focus-on
  *
  * Copyright (c) 2015 Cork Labs <http://cork-labs.org>
@@ -25,7 +25,7 @@
         '$timeout',
         function ($timeout) {
             return function ($scope, $element, $attrs) {
-                var corkUiFocusOn = $attrs.corkUiFocusOn;
+                var unwatcher;
                 if (!$attrs.tabindex) {
                     $element.attr('tabindex', 0);
                 }
@@ -35,11 +35,17 @@
                         $element[0].focus();
                     });
                 }
-                if (corkUiFocusOn === 'auto') {
-                    setFocus();
-                } else {
-                    $scope.$on(corkUiFocusOn, setFocus);
-                }
+
+                $attrs.$observe('corkUiFocusOn', function (val) {
+                    if (unwatcher) {
+                        unwatcher();
+                    }
+                    if (val === 'auto') {
+                        setFocus();
+                    } else {
+                        unwatcher = $scope.$on(val, setFocus);
+                    }
+                });
             };
         }
     ]);
