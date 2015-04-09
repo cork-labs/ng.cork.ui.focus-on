@@ -1,6 +1,6 @@
 {
   "name": "ng.cork.ui.focus-on",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Provides a directive to set element focus on scope message or on render",
   "authors": [
     "Cork Labs <contact@cork-labs.org> (http://cork-labs.org)"
