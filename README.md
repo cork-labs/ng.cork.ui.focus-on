@@ -2,7 +2,7 @@
 [![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng.cork.ui.focus-on/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng.cork.ui.focus-on)
 [![Bower version](http://img.shields.io/bower/v/ng.cork.ui.focus-on.svg?style=flat-square)](https://github.com/cork-labs/ng.cork.ui.focus-on)
 
-> Provides a directive to set element focus on scope message or on render
+> AngularjS component to set element focus on scope message or on render
 
 
 ## Getting Started
