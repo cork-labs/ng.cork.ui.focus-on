@@ -1,5 +1,5 @@
 /**
- * ng.cork.ui.focus-on - v0.0.6 - 2015-04-09
+ * ng.cork.ui.focus-on - v0.0.7 - 2015-04-16
  * https://github.com/cork-labs/ng.cork.ui.focus-on
  *
  * Copyright (c) 2015 Cork Labs <http://cork-labs.org>
